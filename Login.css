@@ -1,0 +1,179 @@
+/* Login Styles */
+.login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #abf2ff; /* Neutral gray for professional background */
+  padding: 2rem;
+}
+
+.login-container {
+  display: flex;
+  max-width: 1200px; /* Increased width for larger containers */
+  width: 100%;
+  height:700px;
+  margin: 2rem auto;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15); /* Deeper shadow for depth */
+  overflow: hidden;
+  background: #ffffff; /* White base for clean look */
+}
+
+.image-container {
+  flex: 1;
+  background: url('./assets/istockphoto-2163393548-2048x2048_PhotoGrid.png') no-repeat center;
+  background-size:contain;
+  min-height: 500px;
+   /* Increased height for larger appearance */
+}
+
+.form-container {
+  flex: 1;
+  background: linear-gradient(180deg, #1e3a8a, #1e40af); /* Retained gradient for brand consistency */
+  color: #fff;
+  padding: 3rem; /* Increased padding for spacious feel */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.form-container h2 {
+  text-align: center;
+  font-size: 2rem; /* Larger title for prominence */
+  font-weight: 700;
+  margin-bottom: 2rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-family: 'Inter', sans-serif; /* Professional font */
+}
+
+.form-group {
+  margin-bottom: 1.5rem; /* Increased spacing */
+}
+
+.form-group label {
+  display: block;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: #bfdbfe; /* Lighter blue for contrast */
+  font-family: 'Inter', sans-serif;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 1rem; /* Larger input fields */
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  transition: all 0.3s ease;
+  font-family: 'Inter', sans-serif;
+}
+
+.form-group input:focus {
+  outline: none;
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 8px rgba(96, 165, 250, 0.6);
+}
+
+.form-group input::placeholder {
+  color: #bfdbfe;
+  opacity: 0.8;
+}
+
+.remember-me {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.remember-me input {
+  margin-right: 0.75rem;
+  width: 20px;
+  height: 20px;
+  accent-color: #60a5fa;
+}
+
+.remember-me label {
+  font-size: 1rem;
+  color: #bfdbfe;
+  font-family: 'Inter', sans-serif;
+}
+
+.login-button {
+  width: 100%;
+  padding: 1rem; /* Larger button */
+  background: #3b82f6; /* Professional blue */
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Inter', sans-serif;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-button:hover {
+  background: #1d4ed8; /* Darker blue on hover */
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.login-button:disabled {
+  background: #93c5fd;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.login-button.loading::after {
+  content: '';
+  width: 24px;
+  height: 24px;
+  border: 3px solid #fff;
+  border-top: 3px solid transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%); /* Center the spinner horizontally */
+}
+
+.login-button.loading span {
+  visibility: hidden;
+}
+
+.error-message {
+  color: #fecaca; /* Softer red for errors */
+  text-align: center;
+  font-size: 0.95rem;
+  margin-top: 1.5rem;
+  font-family: 'Inter', sans-serif;
+}
+
+@keyframes spin {
+  0% { transform: translateX(-50%) rotate(0deg); } /* Include translateX in animation to maintain centering */
+  100% { transform: translateX(-50%) rotate(360deg); }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .login-container {
+    flex-direction: column;
+    max-width: 500px;
+  }
+
+  .image-container {
+    min-height: 200px;
+  }
+
+  .form-container {
+    padding: 2rem;
+  }
+}
